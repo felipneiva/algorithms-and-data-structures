@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
-#include <stack>;
+#include <stack>
+#include <queue>
 
 using namespace std;
 
@@ -24,7 +25,6 @@ Graph* create_graph(int nodes){
             grafo->matrix[i][j] = 0;
         }
     }
-
 
     return grafo;
 }
@@ -80,29 +80,27 @@ void printG(Graph* grafo){
     }
 }
 
-void DFStoposort(Graph* grafo, int v, stack<int>* pilha){
-    // pré-visita //
+void DFS(Graph* grafo, int v, stack<int> &pilha){
     setMark(grafo, v, 1);
     int w = first(grafo, v);
     while (w < grafo->vertices){
         if (getMark(grafo, w) == 0){
-            DFStoposort(grafo, w, pilha);
+            DFS(grafo, w, pilha);
             }
         w = next(grafo, v, w);
     }
-    pilha->push(v);
+    pilha.push(v);
 }
 
-void traverse(Graph* grafo, stack<int>* pilha){
+void topoSort(Graph* grafo, stack<int> &pilha){
     for (int v=0;v<grafo->vertices;v++){
         setMark(grafo, v, 0);
     }
     for (int v=0;v<grafo->vertices;v++){
         if (getMark(grafo, v) == 0){
-            DFStoposort(grafo, v, pilha);
+            DFS(grafo, v, pilha);
         }
     }
-
 }
 
 int main()
