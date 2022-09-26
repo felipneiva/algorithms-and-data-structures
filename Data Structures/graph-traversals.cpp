@@ -26,6 +26,7 @@ Graph* create_graph(int nodes){
         }
     }
 
+
     return grafo;
 }
 
@@ -92,6 +93,27 @@ void DFS(Graph* grafo, int v, stack<int> &pilha){
     pilha.push(v);
 }
 
+void BFS(Graph* grafo, int start){
+    queue<int> fila;
+    fila.push(start);
+    setMark(grafo, start, 1);
+    while (!fila.empty()){
+        int v = fila.front();
+        fila.pop();
+        //pré visita //
+        int w = first(grafo, v);
+        while (w < grafo->vertices){
+            if (getMark(grafo, w) == 0){
+                setMark(grafo, w, 1);
+                fila.push(w);
+            }
+            w = next(grafo, v, w);
+        }
+        //pós visita//
+    }
+}
+
+
 void topoSort(Graph* grafo, stack<int> &pilha){
     for (int v=0;v<grafo->vertices;v++){
         setMark(grafo, v, 0);
@@ -103,8 +125,21 @@ void topoSort(Graph* grafo, stack<int> &pilha){
     }
 }
 
+void traverseBFS(Graph* grafo){
+    for (int v=0;v<grafo->vertices;v++){
+        setMark(grafo, v, 0);
+    }
+    for (int v=0;v<grafo->vertices;v++){
+        if (getMark(grafo, v) == 0){
+            BFS(grafo, v);
+        }
+    }
+}
+
 int main()
 {
+    
+
 
     return 0;
 }
