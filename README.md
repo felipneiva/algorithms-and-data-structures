@@ -1,7 +1,7 @@
 # algorithms-and-data-structures
 Some implementations made during the algorithms and data structures course of UFPE
 
-### Listas
+### Lists
 
 List 1: Searching and Sorting
 
