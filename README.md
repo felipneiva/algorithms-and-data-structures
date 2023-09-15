@@ -3,18 +3,18 @@ Some implementations made during the algorithms and data structures course of UF
 
 ### Listas
 
-Lista 1: Busca e Ordenação
+List 1: Searching and Sorting
 
-Lista 2: Listas, filas e pilhas
+List 2: Linked list, queue and stack
 
-Lista 3: Tabela de dispersão e BST
+List 3: Hash and Binary search tree
 
-Lista 4: AVL e heaps binárias
+List 4: AVL tree and Binary heap
 
-Lista 5: Busca em grafos
+List 5: Graph traversals
 
-Lista 6: Caminhos mínimos e MST
+List 6: Shortest paths and Minimum Spanning Tree
 
-Lista 7: Backtracking e B&B
+List 7: Backtracking and Branch and Bound
 
-Lista 8: Programação dinâmica
+List 8:Dynamic programming
