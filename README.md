@@ -17,4 +17,4 @@ List 6: Shortest paths and Minimum Spanning Tree
 
 List 7: Backtracking and Branch and Bound
 
-List 8:Dynamic programming
+List 8: Dynamic programming
